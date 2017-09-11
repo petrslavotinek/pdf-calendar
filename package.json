@@ -1,0 +1,23 @@
+{
+  "name": "pdf-calendar",
+  "version": "1.0.0",
+  "description": "PDF Calendar Generator",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petrslavotinek/pdf-calendar.git"
+  },
+  "author": "Petr Slavotinek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/petrslavotinek/pdf-calendar/issues"
+  },
+  "homepage": "https://github.com/petrslavotinek/pdf-calendar#readme",
+  "dependencies": {
+    "config": "^1.26.2",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "pdfkit": "^0.8.3"
+  }
+}

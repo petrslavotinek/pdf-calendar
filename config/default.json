@@ -1,0 +1,33 @@
+{
+  "calendars": [
+    {
+      "year": 2017,
+      "months": [9, 10, 11, 12]
+    },
+    {
+      "year": 2018,
+      "months": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    }
+  ],
+  "layout": {
+    "calendarsPerPage": 3,
+    "size": [841.89, 1190.55], // A3
+    "margin": 28.35 // 1 cm
+  }
+}
+
+// Page Sizes - in pt
+// https://github.com/devongovett/pdfkit/blob/master/docs/paper_sizes.coffee.md
+// => 72 points / inch
+// => 1mm ~ 2.835 pt
+// A0 (2383.94 x 3370.39)
+// A1 (1683.78 x 2383.94)
+// A2 (1190.55 x 1683.78)
+// A3 (841.89 x 1190.55)
+// A4 (595.28 x 841.89)
+// A5 (419.53 x 595.28)
+// A6 (297.64 x 419.53)
+// A7 (209.76 x 297.64)
+// A8 (147.40 x 209.76)
+// A9 (104.88 x 147.40)
+// A10 (73.70 x 104.88)
