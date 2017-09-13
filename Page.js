@@ -1,19 +1,23 @@
 const _ = require('lodash');
 const moment = require('moment');
 
-const createDay = (date, active = true) => {
-  const day = date.date();
-  return {
-    date: moment(date),
-    active,
-    dayOfWeek: date.isoWeekday(),
-    day: date.format('D'),
-    month: day === 1 ? date.format('MMMM') : null,
-    year: day === 1 && date.month() === 0 ? date.format('YYYY') : null
-  };
-};
+const createPage = (months, holidays) => {
 
-const createPage = (months) => {
+  const createDay = (date, active = true) => {
+    const day = date.date();
+    const holiday = holidays[date.format('YYYY-MM-DD')];
+    const dayOfWeek = date.isoWeekday();
+    return {
+      date: moment(date),
+      isActive: active,
+      dayOfWeek,
+      day: date.format('D'),
+      month: day === 1 ? date.format('MMMM') : null,
+      year: day === 1 && date.month() === 0 ? date.format('YYYY') : null,
+      holiday: holiday || null,
+      isHoliday: dayOfWeek === 7 || holiday
+    };
+  };
 
   const rows = [[]];
   let rowIndex = 0;
@@ -32,7 +36,7 @@ const createPage = (months) => {
   _
     .times(first.dayOfWeek - 1)
     .forEach((i) => {
-      addDay(createDay(moment(first.date).subtract(first.dayOfWeek - i, 'day'), false));
+      addDay(createDay(moment(first.date).subtract(first.dayOfWeek - i - 1, 'day'), false));
     });
 
   // ostatni dny
